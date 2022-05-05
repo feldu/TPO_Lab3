@@ -41,13 +41,13 @@ public class AuthorizationTest {
         DriverConfig driverConfig = new DriverConfig();
         driverConfig.getDrivers().values().parallelStream().forEach(driver -> {
             driver.get(BASE_URL);
-            //Login
+            //login
             getElementByXPath(driver, "//*[@id=\"root\"]/div/div[1]/div/div[4]/div[3]/span/button").click();
             getElementByXPath(driver, "//*[@id=\"root\"]/div/div[4]/div/div[2]/div/div[2]/div[2]/div/button[4]").click();
             getElementByXPath(driver, "//*[@id=\"email-input\"]").sendKeys(ConfigFileReader.getPropertyFromConfigFile("login"));
             getElementByXPath(driver, "//*[@id=\"outlined-adornment-password\"]").sendKeys("wrong_password");
             getElementByXPath(driver, "//*[@id=\"loginUser\"]/button").click();
-            //Logout
+            //check login
             String text = getElementByXPath(driver, "//*[@id=\"loginUser\"]/div[2]/span").getText();
             assertEquals("Incorrect username or password", text);
         });
@@ -59,7 +59,7 @@ public class AuthorizationTest {
         DriverConfig driverConfig = new DriverConfig();
         driverConfig.getDrivers().values().parallelStream().forEach(driver -> {
             driver.get(BASE_URL);
-            //Login
+            //login
             getElementByXPath(driver, "//*[@id=\"root\"]/div/div[1]/div/div[4]/div[3]/span/button").click();
             getElementByXPath(driver, "//*[@id=\"root\"]/div/div[4]/div/div[2]/div/div[2]/div[2]/div/button[4]").click();
             getElementByXPath(driver, "//*[@id=\"email-input\"]").sendKeys(ConfigFileReader.getPropertyFromConfigFile("login"));
@@ -68,6 +68,7 @@ public class AuthorizationTest {
             //Logout
             getElementByXPath(driver, "//*[@id=\"profile-menu\"]").click();
             getElementByXPath(driver, "//*[@id=\"root\"]/div/div[1]/div/div[4]/div[3]/span/div/div/div/a[3]/button").click();
+            //check logout
             String text = getElementByXPath(driver, "//*[@id=\"root\"]/div/div[1]/div/div[4]/div[3]/span/button").getText();
             assertEquals("Log in", text);
         });
