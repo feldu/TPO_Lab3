@@ -1,4 +1,4 @@
-#Лабораторная работа №3 по Тестированию программного обеспечения
+# Лабораторная работа №3 по Тестированию программного обеспечения
 
 <h4><i><b>Вариант №64587:</b> Answers.com. This free reference tool from Answers.com can look up quick answers in a range of authoritative sources, while you're working with any application. - http://www.answers.com/ </i></h4>
 
@@ -11,7 +11,7 @@
 
 <h3>Выполнение:</h3>
 <h4>UseCase-диаграмма</h4>
-![usecase diagram](diagram/tpo_lab3.drawio.png)
+<img alt="usecase diagram" src="diagram/tpo_lab3.drawio.png"/>
 
 <h4>CheckList тестового покрытия</h4>
 * Тестовый сценарий «Авторизация»:
